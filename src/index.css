@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glow-orange {
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.4);
+  }
+  .glow-blue {
+    box-shadow: 0 0 15px rgba(0, 126, 185, 0.4);
+  }
+  .glow-green {
+    box-shadow: 0 0 15px rgba(40, 200, 64, 0.4);
+  }
+}
+
+/* Custom scrollbar for terminal/server vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f111a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 153, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 153, 0, 0.6);
+}
