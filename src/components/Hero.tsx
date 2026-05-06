@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Activity } from 'lucide-react'
+import DownloadCVButton from './DownloadCVButton'
 
 const Hero = () => {
   const [text, setText] = useState('')
@@ -58,19 +59,23 @@ const Hero = () => {
         Currently migrating mental models from monolithic APIs to distributed cloud infrastructures.
       </motion.p>
 
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 3.2 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="group relative flex items-center gap-3 bg-aws-dark border border-green-500/50 px-8 py-4 rounded font-mono text-green-400 text-sm overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-        <Activity size={18} className="animate-pulse text-green-400" />
-        <span>DEPLOY_SYSTEM()</span>
-        <div className="absolute right-0 top-0 w-1 h-full bg-green-500 animate-pulse glow-green" />
-      </motion.button>
+      <div className="flex flex-col sm:flex-row gap-6 mt-4">
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 3.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="group relative flex items-center gap-3 bg-aws-dark border border-green-500/50 px-8 py-4 rounded font-mono text-green-400 text-sm overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <Activity size={18} className="animate-pulse text-green-400" />
+          <span>DEPLOY_SYSTEM()</span>
+          <div className="absolute right-0 top-0 w-1 h-full bg-green-500 animate-pulse glow-green" />
+        </motion.button>
+
+        <DownloadCVButton />
+      </div>
     </section>
   )
 }
